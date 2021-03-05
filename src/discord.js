@@ -135,8 +135,17 @@ class Discord extends EventEmitter {
     this.settings.socket.onmessage = this.handle;
   }
 
+  /**
+   * @param {String|Number} channel_id 
+   * @returns {Boolean} 
+   */
   getShop = async channel_id => {
     try {
+      /**
+       * Makes a POST request to the 
+       * Discord channel specified in
+       * config.memer.channel_id
+       */
       let body = await(await (p({
         method: "POST",
         url: `https://discord.com/api/v8/channels/${channel_id}/messages`,
@@ -149,8 +158,15 @@ class Discord extends EventEmitter {
         }
       }))).body.toString();
 
+      /**
+       * Parses the body as JSON
+       */
       body = JSON.parse(body);
 
+      /**
+       * If `body.id` exists, message was sucesfully
+       * sent so, we return true otherwise return false
+       */
       if(body.id) return true;
       return false;
     } catch {
