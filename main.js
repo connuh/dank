@@ -47,6 +47,15 @@ Client.on("message_create", async msg => {
      * it returns `null`
      */
     const parsed = Helper.parseItem(msg.embeds[0].description);
+
+    /**
+     * If parsed.discount is 0, retry after 10
+     * seconds to get the correct disctount!
+     */
+    if(parsed.discount == "0") return setTimeout(() => {
+      await Helper.getShop(config.memer.channel_id);
+    }, 10 * 1000);
+
     /**
      * We post the Discord webhook containing
      * all of the information about the sale!
