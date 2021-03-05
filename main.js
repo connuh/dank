@@ -52,7 +52,7 @@ Client.on("message_create", async msg => {
      * If parsed.discount is 0, retry after 10
      * seconds to get the correct disctount!
      */
-    if(parsed.discount == "0") return setTimeout(() => {
+    if(parsed.discount == "0") return setTimeout(async () => {
       await Helper.getShop(config.memer.channel_id);
     }, 10 * 1000);
 
