@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=connuh&repo=dank&cache_seconds=86400&theme=default">
+</p>
+
 # Dank - a DankMemer lightning sale parser. ⚡
 ### DankMemer lightning sale parser for those who want to receive notifications!
 ---
