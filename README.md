@@ -4,6 +4,7 @@
 
 # Dank - a DankMemer lightning sale parser. ⚡
 ### DankMemer lightning sale parser for those who want to receive notifications!
+#### TODO: Improve source ✅ 
 ---
 ### Setup
 
